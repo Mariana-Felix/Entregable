@@ -55,7 +55,7 @@ ROOT_URLCONF = 'MVT.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['/Users/jean-philippeursule/Downloads/ClaseCoder/MVT_Ursule/Familia/templates/Familia'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
