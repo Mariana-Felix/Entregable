@@ -13,7 +13,7 @@ def papa(self):
 
 def mama(self):
     mama = Integrantes(nombre='Shirley', apellido= 'Vera Marquez', nacionalidad= 'Boliviana', fechaNacimiento='1985-11-07', dni='90000001')
-    mama.save()
+    #mama.save()
     
     documento = f'La mama se llama {mama.nombre} {mama.apellido}, es de nacionalida {mama.nacionalidad} , nacio el {mama.fechaNacimiento} y tiene el numero de DNI: {mama.dni}'
     
