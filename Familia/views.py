@@ -34,3 +34,15 @@ def hija(self):
     documento = template.render(diccionario)
     
     return HttpResponse(documento)
+
+def inicio(request):
+    return render(request,'Familia/inicio.html')
+
+def papa(request):
+    return render(request,'Familia/papa.html')
+
+def mama(request):
+    return render(request,'Familia/mama.html')
+
+def hija(request):
+    return render(request,'Familia/hija.html')
