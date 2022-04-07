@@ -1,14 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% extends 'Familia/general.html' %}
 
-    <p style='color:green'>La mama se llama {{mama.nombre}} {{mama.apellido}}, es de nacionalidad {{mama.nacionalidad}}, nacio el {{mama.fechaNacimiento}} y tiene el numero de DNI: {{mama.dni}}</p>
-    
-</body>
-</html>
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+<!-- Aqui va lo que va cambiar-->
+
+<p style='color:green'>La mama se llama {{mama.nombre}} {{mama.apellido}}, es de nacionalidad {{mama.nacionalidad}}, 
+    nacio el {{mama.fechaNacimiento}} y tiene el numero de DNI: {{mama.dni}}</p>
+
+{% endblock %}
+
