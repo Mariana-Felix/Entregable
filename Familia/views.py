@@ -3,46 +3,38 @@ from django.http import HttpResponse
 from Familia.models import Integrantes
 from django.template import loader
 # Create your views here.
-
+#Completado con los nombres y datos de los familiares
 def papa(self):
-    papa = Integrantes(nombre='Jean-Philippe', apellido= 'Ursule', nacionalidad= 'Francesa', fechaNacimiento='1982-09-13', dni='90000000')
-    #papa.save()
+    papa = Integrantes.objects.get(id=10)
     diccionario = {'papa': papa}
-    template = loader.get_template('papa.html')
-    documento = template.render(diccionario)
-    
-    
-    return HttpResponse(documento)
+    template = loader.get_template('Familia/papa.html')    
+    return HttpResponse(template.render(diccionario))
 
 def mama(self):
-    mama = Integrantes(nombre='Shirley', apellido= 'Vera Marquez', nacionalidad= 'Boliviana', fechaNacimiento='1985-11-07', dni='90000001')
+    mama = Integrantes.objects.get(id=12)
+    diccionario = {'mama': mama}
+    template = loader.get_template ('Familia/mama.html')
+    #mama = Integrantes(nombre='Rosa', apellido= 'Olivera', nacionalidad= 'Argentina', fechaNacimiento='1986-09-19', dni=17646352)
     #mama.save()
     
-    diccionario = {'mama': mama}
-    template = loader.get_template('mama.html')
-    documento = template.render(diccionario)
+    #diccionario = {'mama': mama}
+    #template = loader.get_template('Familia/mama.html')
+    #documento = template.render(diccionario)
     
-    return HttpResponse(documento)
+    return HttpResponse(template.render (diccionario))
     
 def hija(self):
-    
-    hija = Integrantes(nombre='Victoria', apellido= 'Ursule Vera', nacionalidad= 'Franco-Argentina', fechaNacimiento='2019-01-23', dni='50000000')
+    hija = Integrantes.objects.get(id=13)
+    diccionario = {'hija': hija}
+    template = loader.get_template ('Familia/hija.html')
+    #hija = Integrantes(nombre='Mariana', apellido= 'Felix', nacionalidad= 'Argentina', fechaNacimiento='1992-07-21', dni=36415093)
     #hija.save()
     
-    diccionario = {'hija': hija}
-    template = loader.get_template('hija.html')
-    documento = template.render(diccionario)
+    #diccionario = {'hija': hija}
+    #template = loader.get_template('Familia/hija.html')
+    #documento = template.render(diccionario)
     
-    return HttpResponse(documento)
+    return HttpResponse(template.render (diccionario))
 
 def inicio(request):
     return render(request,'Familia/inicio.html')
-
-def papa(request):
-    return render(request,'Familia/papa.html')
-
-def mama(request):
-    return render(request,'Familia/mama.html')
-
-def hija(request):
-    return render(request,'Familia/hija.html')
